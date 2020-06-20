@@ -4,14 +4,9 @@ import { useState} from 'react';
 
 export default function Modal(props: any) {
     const [modalOpen, setModalOpen] = useState(true);
-
-    function closeModal(modalState){
-      setModalOpen(modalState)
-      props.onClose && props.onClose();
-    }
     return (
       <>
-      <div className="fixed bottom-0 inset-x-0 px-4 pb-4 sm:inset-0 sm:flex sm:items-center sm:justify-center" onClick={()=>closeModal(!modalOpen)}>
+      <div className="fixed bottom-0 inset-x-0 px-4 pb-4 sm:inset-0 sm:flex sm:items-center sm:justify-center">
           <Transition
           show={modalOpen}
           enter="ease-out duration-300"
